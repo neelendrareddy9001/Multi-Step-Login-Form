@@ -2,7 +2,7 @@ import React, {useState, createContext} from 'react';
 
 const FormContext = createContext();
 
-export const FormProvider = () => {
+export const FormProvider = {children} => {
     const [username, setUsername] = useState('');
     const [cUsername, setCUsername] = useState('');
     const [phone, setPhone] = useState('');
@@ -27,6 +27,8 @@ export const FormProvider = () => {
                 setRPassword,
             }}
         >
+            {children}
+
         </FormContext.Provider>
     )
     
